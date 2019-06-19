@@ -1,0 +1,32 @@
+<div class="container-fluid mb -5">
+    <h1>Details</h1>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate >
+  
+      
+       <hr />
+     
+  
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" name="userName" [(ngModel)]="userModle.name">
+      </div>
+  
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="userModle.email">
+      </div>
+
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="number" class="form-control" name="number" [(ngModel)]="userModle.number">
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="number" [(ngModel)]="userModle.password">
+      </div>
+  
+      <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+  </div>
+  

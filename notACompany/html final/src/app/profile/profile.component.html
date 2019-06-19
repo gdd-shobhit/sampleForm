@@ -1,0 +1,12 @@
+  <!-- <p>it works</p> -->
+  <h3>User profile</h3>
+  <ul class="list-group"  >
+    <li class="list-group-item"><strong>Name:</strong>{{details.authData.user.name}}</li>
+    <li class="list-group-item"><strong>Email:</strong>{{details.authData.user.email}}</li>
+    <li class="list-group-item"><strong>Phone Number:</strong>{{details.authData.user.number}}</li>
+    <li class="list-group-item"><strong>Password:</strong>{{details.authData.user.password}}</li>
+  </ul>
+
+  <button class="btn btn-primary" type="submit" (click)=" configService.deleteToken()" >
+    Logout
+  </button>

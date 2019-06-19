@@ -1,0 +1,61 @@
+<!-- <div class="container-fluid mb -5 bg" class = "centre bg">
+    <h1>Login Form</h1>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate > -->
+  
+      <!-- <div class="form-group" >
+        <label>Name</label>
+        <input type="text" class="form-control" name="userName" [(ngModel)]="loginuserModle.name">
+      </div> -->
+  
+      <!-- <div class="form-group">
+        <label>Phone</label>
+        <input type="number" placeholder="Enter Number" class="form-control" name="number" [(ngModel)]="loginuserModle.number">
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" placeholder="Enter Password" class="form-control" name="number" [(ngModel)]="loginuserModle.password">
+      </div>
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+  
+      <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+</div> -->
+<div class="container-fluid mb -5 bg" class = "centre bg">
+
+
+
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate >
+  <div class="centered">
+  <div class="form-wrapper">
+  <h2 class="container">Login Form</h2>
+  <div class="container">
+    <div class="form-group">
+    <label>Phone</label>
+    <input type="tel" placeholder="Enter Number" class="form-control" name="number" [(ngModel)]="loginuserModle.number">
+
+    <label>Password</label>
+    <input type="password" placeholder="Enter Password" class="form-control" name="number" [(ngModel)]="loginuserModle.password">
+        
+    <button class="btn btn-primary" type="submit">Login</button>
+    <!-- <label>
+    <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label> -->
+    </div>
+    <span class="psw"> <a href="/change">Forgot password?</a></span>
+
+  </div>
+
+  </div>
+ 
+
+  </div>
+    
+</form>
+
+</div>
+
+

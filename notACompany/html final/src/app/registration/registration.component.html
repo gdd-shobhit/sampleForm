@@ -1,0 +1,60 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<div class="split left bg">
+  <div class="">
+    <!-- <img src="https://www.pexels.com/photo/grayscale-photo-of-city-buildings-2382924/" > -->
+    <!-- <slider>
+      <slide></slide>
+      <slide></slide>
+      <slide></slide>
+      <slide></slide>
+    </slider> -->
+    
+  </div>
+</div>
+
+<div class="container-fluid mb -5" class="split right ">
+  <div class="centered">
+    <h2>Sign Up</h2>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate >
+    <div class="form-wrapper">
+      <div class="form-group">
+        <label>Name</label>
+        <input placeholder="Enter name" type="text" required #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" name="userName" [(ngModel)]="userModle.name">
+        <small class="text-danger" [class.d-none]="name.valid || name.untouched" >
+          Name is required
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label>Email</label>
+        <input placeholder="Enter Email" type="email" required #mail="ngModel" [class.is-invalid]="mail.invalid && mail.touched" class="form-control" name="email" [(ngModel)]="userModle.email">
+        <small class="text-danger" [class.d-none]="mail.valid || mail.untouched" >
+            Email is required
+          </small>
+      </div>
+
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" placeholder="Enter Number" required #call="ngModel" pattern="[0-9]{10}" [class.is-invlaid]="call.invalid && call.touched" class="form-control" name="number" [(ngModel)]="userModle.number">
+        <small class="text-danger" [class.d-none]="call.valid || call.untouched">
+          Phone number must be 10 digits
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" required #pass="ngModel" pattern="(?=.*[a-z]).{8,}" [class.is-invalid]="pass.invalid && pass.touched" class="form-control" name="password" [(ngModel)]="userModle.password">
+        <small class="text-danger" [class.d-none]="pass.valid || pass.untouched">
+            Must contain at least 8 characters 
+        </small>
+      </div>
+    </div>
+      <button [disabled]="userForm.form.invalid" class="btn btn-primary" type="submit" >
+        Register
+        
+      </button>
+    </form>
+  </div>  
+</div>

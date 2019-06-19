@@ -1,0 +1,91 @@
+.bg { 
+    /* The image used */
+   background: url('https://images.pexels.com/photos/2422557/pexels-photo-2422557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+ 
+  
+  /* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+small {
+  text-align: center;
+}
+
+.bg {
+  background: url('https://hdwallsource.com/img/2019/2/apex-legends-wraith-wallpaper-67034-69330-hd-wallpapers.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+}
+
+.form-wrapper {
+  background: #ffffffbd;
+  padding: 25px;
+  border-radius: 8px;
+  margin-top: 10%;
+
+}
+  /* Bordered form */
+  
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 4px 8px;
+    margin: 2px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
