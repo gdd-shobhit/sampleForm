@@ -4,25 +4,27 @@ var connect = require('../../mongoConnect');
 const nodemailer = require("nodemailer");
 var randomNumber = require('random')
 var sha256 = require('js-sha256').sha256;
-var otpBool=false;
+var otpBool = false;
 
 
 router.post('/forgotPassword', (req, res) => {
-    CheckEmail(req.body.email,(emailBool)=>{
-        if(emailBool===true){
+    CheckEmail(req.body.email, (emailBool) => {
+        if (emailBool === true) {
             SendMail(req.body.email, () => {
                 res.json({
+                    emailCheck: true,
                     message: "Mail has been sent to " + req.body.email
                 })
             })
         }
-        else{
+        else {
             res.json({
-                message:"This email is not registered"
+                emailCheck: false,
+                message: "This email is not registered"
             })
         }
     })
-   
+
 })
 router.post('/forgotPassword/enterOtp', (req, res) => {
     CheckOtp(req.body.OTP, req.body.email, (otp) => {
@@ -33,7 +35,7 @@ router.post('/forgotPassword/enterOtp', (req, res) => {
                 otpCheck: true
             })
         }
-        else {           
+        else {
             res.json({
                 message: "OTP was wrong",
                 otpCheck: false
@@ -42,29 +44,28 @@ router.post('/forgotPassword/enterOtp', (req, res) => {
 
     })
 })
-router.post('/changePassword', (req,res) => {
+router.post('/changePassword', (req, res) => {
     ChangePassword(req.body.newPassword, req.body.email, (passBool) => {
-       if(passBool===true){
-        res.json({
-            message: "Password has been changed"
-        })
+        if (passBool === true) {
+            res.json({
+                message: "Password has been changed"
+            })
+        }
+        else {
+            res.json({
+                message: "OTP wasn't verified"
+            })
+        }
 
-       } 
-       else{
-        res.json({
-            message: "OTP wasn't verified"
-        })
-       }
-        
     })
 })
-function CheckEmail(email,callback){
-    connect("registeredPeople",(err,collection)=>{
-        collection.find({email:email}).toArray((err,res)=>{
-            if(res.length===0){
+function CheckEmail(email, callback) {
+    connect("registeredPeople", (err, collection) => {
+        collection.find({ email: email }).toArray((err, res) => {
+            if (res.length === 0) {
                 callback(false);
             }
-            else{
+            else {
                 callback(true);
             }
         })
@@ -77,7 +78,7 @@ function ChangePassword(password, email, callback) {
             collection.updateOne({ email: email },
                 { $set: { password: sha256(password) } }, (err, res) => {
                 })
-                callback(true)
+            callback(true)
         }
         else {
             callback(false);

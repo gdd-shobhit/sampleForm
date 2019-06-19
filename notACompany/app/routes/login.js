@@ -8,7 +8,7 @@ const nodemailer = require("nodemailer");
 var randomNumber= require('random')
 loginRouter.post('/login',(req,res)=>{
     ValidateLogin(req.body.number,req.body.password,(numberCheck,passwordCheck,newObj)=>{
-        if(newObj==null){
+        if(newObj===null){
             console.log("Number check: "+numberCheck);
             console.log("Password Check: "+passwordCheck);
             res.json({
